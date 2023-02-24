@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { Avatar, createTheme, CssBaseline, Button, FormControlLabel, Grid, TextField, ThemeProvider, Typography } from '@mui/material'
-import { Box, Container } from '@mui/material';
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { Avatar, createTheme, CssBaseline, Button, Link, FormControlLabel, Grid, TextField, ThemeProvider, Typography, Container } from '@mui/material'
+import { Box } from '@mui/system';
+
 import { CheckBox, LockOutlined } from '@mui/icons-material'
 
 
@@ -11,8 +11,8 @@ function Copyright ( props )
   return (
     <Typography variant="body2" color="text.secondary" align='center' { ...props }>
       { 'Copyright @' }
-      <Link color='inherit' >
-        Your Website
+      <Link color='inherit' href="#" >
+        Ego
       </Link>{ ' ' }
       { new Date().getFullYear() }
       { ' . ' }
@@ -22,7 +22,7 @@ function Copyright ( props )
 
 const theme = createTheme();
 
-function SignIn ()
+export default function SignIn ()
 {
   const handleSubmit = ( event ) =>
   {
@@ -72,7 +72,6 @@ function SignIn ()
               label='Password '
               name='password'
               autoComplete='current-password'
-              autoFocus
             />
 
             <FormControlLabel
@@ -80,7 +79,7 @@ function SignIn ()
               label="Remember Me"
             />
             <Button
-              type="submit"
+              type='submit'
               fullWidth
               variant="contained"
               sx={ { mat: 3, mb: 2 } }
@@ -104,11 +103,10 @@ function SignIn ()
         <Copyright sx={ { mt: 8, mb: 4 } } />
       </Container>
     </ThemeProvider>
-  )
-};
+  );
+}
 
 
 
-export default SignIn();
 
 
