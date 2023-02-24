@@ -1,40 +1,26 @@
-// importing components from react-router-dom package
-import
-{
-  BrowserRouter,
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from "react-router-dom";
-
-// import Home component
-import Home from "./Home/Home";
-// import About component
-import About from "./About/About";
-// import ContactUs component
-import ContactUs from "./Contact/ContactUs";
-import SignIn from "./SignIn/SignIn.jsx";
+import React from 'react';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route }
+  from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Blogs from './pages/Blogs';
+import SignIn from './pages/SignIn';
+import Contact from './pages/ContactUs';
 
 function App ()
 {
   return (
-    <BrowserRouter>
-      {/* This is the alias of BrowserRouter i.e. Router */ }
-      <Router>
-        <Routes>
-
-          <Route exact path="/" component={ Home } />
-
-
-          <Route path="/about" component={ About } />
-
-          <Route path="/contactUs" component={ ContactUs } />
-
-          <Route path="/signIn" component={ SignIn } />
-
-        </Routes>
-      </Router>
-    </BrowserRouter>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route exact path='/' element={ <Home /> } />
+        <Route path='/about' element={ <About /> } />
+        <Route path='/contact' element={ <Contact /> } />
+        <Route path='/blogs' element={ <Blogs /> } />
+        <Route path='/sign-up' element={ <SignIn /> } />
+      </Routes>
+    </Router>
   );
 }
 
