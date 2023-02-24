@@ -1,6 +1,10 @@
 import React from "react";
 import { Nav, NavLink, NavMenu }
   from "./NavbarElements";
+import './Navbar.css';
+import { Stack } from "@mui/system";
+import { Typography } from "@mui/material";
+
 
 const Navbar = () =>
 {
@@ -8,6 +12,9 @@ const Navbar = () =>
     <>
       <Nav>
         <NavMenu>
+          <NavLink to="/" activeStyle>
+            Home
+          </NavLink>
           <NavLink to="/about" activeStyle>
             About
           </NavLink>
@@ -17,13 +24,24 @@ const Navbar = () =>
           <NavLink to="/blogs" activeStyle>
             Blogs
           </NavLink>
-          <NavLink to="/sign-up" activeStyle>
-            Sign In
-          </NavLink>
+          <Stack sx={ { display: 'flex', flexDirection: 'row' } } className="signIn">
+            <NavLink to="/sign-in" activeStyle>
+              Sign In
+            </NavLink>
+            <Typography>
+              /
+            </Typography>
+            <NavLink className="" to="/sign-up" activeStyle>
+              Sign Up
+            </NavLink>
+          </Stack>
         </NavMenu>
       </Nav>
     </>
   );
 };
+
+
+
 
 export default Navbar;

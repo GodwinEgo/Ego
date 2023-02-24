@@ -1,8 +1,9 @@
 import React from 'react'
-import { Avatar, createTheme, CssBaseline, Button, Link, FormControlLabel, Grid, TextField, ThemeProvider, Typography, Container } from '@mui/material'
-import { Box } from '@mui/system';
-
+import { Avatar, CssBaseline, Button, Link, FormControlLabel, Grid, TextField, Typography, Container } from '@mui/material'
+import { Box } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CheckBox, LockOutlined } from '@mui/icons-material'
+import Navbar from '../components/Navbar';
 
 
 
@@ -37,6 +38,7 @@ const SignIn = () =>
 
   return (
     <ThemeProvider theme={ theme }>
+      <Navbar />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -76,7 +78,7 @@ const SignIn = () =>
             />
 
             <FormControlLabel
-              control={ <CheckBox value="remember" color='primary' /> }
+              control={ <CheckBox value="remember" color="primary" /> }
               label="Remember Me"
             />
             <Button
