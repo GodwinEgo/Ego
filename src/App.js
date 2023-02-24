@@ -1,12 +1,14 @@
+import { Stack } from '@mui/system';
 import React from 'react';
+import SignIn from './SignIn/SignIn';
 
 
 function App ()
 {
   return (
-    <div>
-      Hello Godwin
-    </div>
+    <Stack>
+      <SignIn />
+    </Stack>
   );
 }
 
