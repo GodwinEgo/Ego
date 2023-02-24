@@ -22,7 +22,8 @@ function Copyright ( props )
 
 const theme = createTheme();
 
-export default function SignIn ()
+
+const SignIn = () =>
 {
   const handleSubmit = ( event ) =>
   {
@@ -105,6 +106,8 @@ export default function SignIn ()
     </ThemeProvider>
   );
 }
+export default SignIn
+
 
 
 
