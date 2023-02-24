@@ -1,8 +1,10 @@
-import { Avatar, createTheme, CssBaseline, TextField, ThemeProvider, Typography } from '@mui/material'
-import { Box, Container } from '@mui/system';
-import React from 'react'
+import * as React from 'react'
+import { Avatar, createTheme, CssBaseline, Button, FormControlLabel, Grid, TextField, ThemeProvider, Typography } from '@mui/material'
+import { Box, Container } from '@mui/material';
 import { Link } from 'react-router-dom'
-import { LockOutlined } from '@mui/icons-material'
+import { CheckBox, LockOutlined } from '@mui/icons-material'
+
+
 
 function Copyright ( props ) 
 {
@@ -20,7 +22,7 @@ function Copyright ( props )
 
 const theme = createTheme();
 
-export default function SignIn ()
+function SignIn ()
 {
   const handleSubmit = ( event ) =>
   {
@@ -31,6 +33,7 @@ export default function SignIn ()
       password: data.get( 'password' ),
     } );
   };
+
   return (
     <ThemeProvider theme={ theme }>
       <Container component="main" maxWidth="xs">
@@ -72,16 +75,40 @@ export default function SignIn ()
               autoFocus
             />
 
-
+            <FormControlLabel
+              control={ <CheckBox value="remember" color='primary' /> }
+              label="Remember Me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={ { mat: 3, mb: 2 } }
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  { "Don't have an account? Sign Up" }
+                </Link>
+              </Grid>
+            </Grid>
           </Box>
         </Box>
+        <Copyright sx={ { mt: 8, mb: 4 } } />
       </Container>
     </ThemeProvider>
   )
-
-
-
-
 };
+
+
+
+export default SignIn();
 
 
