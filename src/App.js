@@ -7,7 +7,6 @@ import Blogs from './pages/Blogs';
 import SignIn from './pages/SignIn';
 import Contact from './pages/ContactUs';
 import SignUp from './pages/SignUp'
-import SignInSide from './pages/SignInSide';
 
 function App ()
 {
@@ -20,7 +19,6 @@ function App ()
         <Route path='/blogs' element={ <Blogs /> } />
         <Route path='/sign-in' element={ <SignIn /> } />
         <Route path='/sign-up' element={ <SignUp /> } />
-        <Route path='/sign-in-side' element={ <SignInSide /> } />
       </Routes>
     </Router>
   );
